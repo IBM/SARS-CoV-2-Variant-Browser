@@ -1,0 +1,13 @@
+.selectArea {
+  position: absolute;
+}
+.selectLabel {
+  width: 80px;
+  display: inline-block;
+  line-height: 32px;
+  vertical-align: top;
+}
+.select {
+  width: 200px;
+  display: inline-block;
+}

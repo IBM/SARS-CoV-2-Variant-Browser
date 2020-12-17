@@ -1,0 +1,48 @@
+.header {
+  display: flex;
+  align-items: top;
+  padding: 0;
+  cursor: pointer;
+}
+.header:hover {
+  background: #f4f4f4;
+}
+.tips {
+  position: absolute;
+  top: 36px;
+  right: 8px;
+  display: flex;
+  justify-content: center;
+  border-radius: 4px;
+  padding: 4px;
+  color: #0f62fe;
+  /* background: rgba(255, 255, 255, 0.7);
+  border: solid #f4f4f4 1px; */
+  animation: point-up-down 1s linear -1s infinite alternate;
+}
+@keyframes point-left-right {
+  0% {
+    -webkit-transform: translateX(0px);
+    transform: translateX(0px);
+  }
+  100% {
+    -webkit-transform: translateX(4px);
+    transform: translateX(4px);
+  }
+}
+@keyframes point-up-down {
+  0% {
+    -webkit-transform: translateY(0px);
+    transform: translateY(0px);
+  }
+  100% {
+    -webkit-transform: translateY(4px);
+    transform: translateY(4px);
+  }
+}
+.picker {
+  width: 100%;
+}
+.picker > div {
+  width: 100%;
+}

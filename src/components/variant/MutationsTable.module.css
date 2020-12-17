@@ -1,0 +1,12 @@
+.button {
+  background-color: transparent;
+}
+.button:hover {
+  background-color: #E5E5E5;
+}
+.button span {
+  visibility: hidden;
+}
+.button svg {
+  color: #525252;
+}

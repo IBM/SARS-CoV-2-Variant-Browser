@@ -1,0 +1,163 @@
+.landingpage {
+  background: #ffffff;
+}
+
+.landingpage__main {
+  background: #ffffff;
+  /*
+  position: absolute;
+  left: 0;
+  right: 0;
+  */
+  max-width: 1020px;
+  padding: 0;
+  overflow: hidden;
+}
+
+.landingpage__cardrow {
+  padding: 0;
+  margin: 0;
+  text-align: center;
+}
+
+.landingpage__card {
+  margin-top: 8px;
+  margin-bottom: 0px;
+  margin-left: auto;
+  margin-right: auto;
+  padding-left: auto;
+  padding-right: auto;
+  text-align: center;
+  padding-bottom: 0px;
+  background: #ffffff;
+  max-width: 340px;
+}
+
+.landingpage__cardbody {
+  padding: 4px;
+  position: relative;
+  height: calc( 1.3em * 3 );
+  line-height: 1.3;
+  text-align: center;
+  max-width: 324px;
+}
+
+.landingpage__cardtile {
+  background: #ffffff;
+  padding: 0;
+}
+
+.landingpage__banner {
+  position: relative;
+  padding: 0;
+  min-height: 180px;
+  max-width: 100vw;
+  background: #161616;
+}
+
+.landingpage__bannerimage{
+  position: relative;
+  height: 180px;
+}
+
+.landingpage__image {
+  max-width: 100%;
+}
+
+.landingpage__imagetitle{
+  position: absolute;
+  max-width: 40%;
+  word-wrap: normal;
+  top: 8px;
+  left: 16px;
+  color: #ffffff;
+}
+
+.landingpage__imagesubtitle{
+  position: absolute;
+  max-width: 40%;
+  word-wrap: normal;
+  bottom: 8px;
+  left: 16px;
+  right: 0;
+  color: #ffffff;
+}
+
+.landingpage__heading {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  margin-right: 5%;
+  transform: translate(0, -50%);
+  color: #ffffff;
+  width: 45%;
+}
+
+@media only screen and (max-width:651px) {
+  .landingpage__heading {
+    font-size: 11px;
+  }
+}
+
+.landingpage__headingsub {
+  position: absolute;
+  bottom: 8px;
+  right: 8px;
+  color: #a8a8a8;
+}
+
+.landingpage__content {
+  margin-top: 16px;
+}
+
+.landingpage__thumbnail {
+  max-width: 310px;
+  max-height: 155px;
+}
+
+.landingpage__buttoncard {
+  background: #ffffff;
+  padding: 0 8px;
+  text-align: center;
+}
+
+.landingpage__button {
+  height: 48px;
+  width: 220px;
+  margin: 0;
+  padding: 8px;
+}
+
+.landingpage__warningmessagetile {
+  padding: 4px 16px;
+}
+
+.landingpage__news{
+  padding: 16px;
+}
+
+.landingpage__secondbutton_right {
+  width: 110px;
+  padding: 8px;
+  float: left;
+  border-color:  #393939;
+  color: #161616;
+}
+
+.landingpage__secondbutton_right:hover {
+  background: #6f6f6f;
+}
+
+.landingpage__secondbutton_left {
+  width: 111px;
+  padding: 8px;
+  float: left;
+  border-color:  #393939;
+  color: #161616;
+  margin-left: -1px;
+}
+
+.landingpage__secondbutton_left:hover {
+  background: #6f6f6f;
+  margin-left: -1px;
+}

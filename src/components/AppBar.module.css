@@ -1,0 +1,11 @@
+.title {
+  cursor: pointer;
+  white-space: nowrap;
+}
+.ack {
+  font-size: 0.875rem;
+  color: #c6c6c6;
+  margin: auto 48px auto 0;
+  padding: 0 12px;
+  cursor: pointer;
+}

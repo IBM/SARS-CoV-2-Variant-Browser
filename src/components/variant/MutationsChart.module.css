@@ -1,0 +1,102 @@
+.tooltipLabel {
+  color: white;
+  font-weight:700;
+  padding: 0 3px;
+  margin: 3px 3px 0 3px;
+}
+.tooltipValue {
+  padding-left: 16px;
+}
+.sample {}
+.mutation {}
+.mutation:hover {
+  fill-opacity: 1;
+  cursor: pointer;
+}
+.linkText {
+  fill: #0f62fe;
+  font-size: 12px;
+  font-weight: 600;
+}
+.linkText:hover {
+  text-decoration: underline;
+  cursor: pointer;
+}
+.header {
+  position: absolute;
+  top: 0;
+  height: 104px;
+  width: calc(100% - 16px);
+  background: #ffffff;
+  z-index: 1;
+}
+.headerMenu {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  white-space: nowrap;
+}
+.headerMenu > div {
+  padding-left: 2px;
+  padding-right: 2px;
+}
+.slider {
+  margin-top: -6px;
+}
+.switch {
+  min-width: 185px;
+  padding-top: 1px;
+}
+.switch > div {
+  height: 32px;
+}
+.switch button {
+  height: 32px;
+}
+.menuIcon {
+  fill: black;
+  width: 24px;
+  height: 24px;
+}
+.menuHeader {
+  width: calc(100% - 16px);
+  height: 2.2rem;
+  display: flex;
+  align-items: center;
+  margin: 0 8px;
+  color: black;
+  font-weight: bold;
+}
+.menuItem {
+  height: 1.8rem;
+}
+.menuChecked:after {
+  content: "";
+  background-color: transparent;
+  position: relative;
+  top: -4px;
+  right: 16px;
+  width: 5px;
+  border-bottom: 2px solid #393939;
+  height: 11px;
+  border-right: 2px solid #393939;
+  transform: rotate(45deg);
+  -o-transform: rotate(45deg);
+  -ms-transform: rotate(45deg);
+  -webkit-transform: rotate(45deg);
+}
+.miniTooltip {
+  position: fixed;
+  width: auto;
+  height: auto;
+  padding: 4px;
+  font-size: 11px;
+  color: #ffffff;
+  background: #393939;
+  -webkit-box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.8);
+  -moz-box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.8);
+  box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.8);
+  border-radius: 4px;
+  visibility: hidden;
+}

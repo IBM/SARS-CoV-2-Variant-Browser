@@ -1,0 +1,22 @@
+[
+    {
+      "header": "Mutation",
+      "key": "mutation"
+    },
+    {
+      "header": "Gene",
+      "key": "gene"
+    },
+    {
+      "header": "AA Change",
+      "key": "amino_acid_change"
+    },
+    {
+      "header": "Count",
+      "key": "count"
+    },
+    {
+      "header": "Type",
+      "key": "mutation_type"
+    }
+  ]

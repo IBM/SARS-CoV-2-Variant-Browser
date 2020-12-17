@@ -1,0 +1,15 @@
+.accordionContent {
+  display: block;
+  padding: 0;
+  max-height: 0;
+  opacity: 0;
+  overflow: hidden;
+  transition: max-height .2s, padding .2s, opacity .3s ease-out;
+}
+.accordionContentOpen {
+  padding: 8px 0;
+  max-height: 200px;
+  opacity: 1;
+  overflow: visible;
+  transition: max-height .2s, padding .2s, opacity .3s ease-out;
+}

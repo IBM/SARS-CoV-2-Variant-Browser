@@ -1,0 +1,49 @@
+.row {
+  justify-content: center;
+}
+.card {
+  margin: 8px;
+  background: #ffffff;
+  border: 1px solid #f0f3f6;
+  border-radius: 4px;
+  box-shadow: 0 1px 2px 0 rgba(0, 0, 0, 0.1);
+}
+.cardHeader {
+  height: 32px;
+  padding: 8px;
+  font-weight: 700;
+  border-bottom: 1px solid #f0f3f6;
+}
+.cardBody {
+  padding: 8px;
+  position: relative;
+}
+.summary {
+  padding: 8px;
+  display: flex;
+  justify-content: space-between;
+}
+.summaryItem {
+  flex: auto;
+  text-align: center;
+}
+.summaryItem div:first-child {
+  font-size: 0.9rem;
+}
+.summaryItem div:last-child {
+  padding-top: 0.4rem;
+  font-size: 1.4rem;
+  font-weight: bold;
+}
+.chartHuge {
+  height: 320px;
+  overflow: hidden;
+}
+.chartLarge {
+  height: 270px;
+  overflow: hidden;
+}
+.chartNormal {
+  height: 220px;
+  overflow: hidden;
+}

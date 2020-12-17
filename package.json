@@ -1,0 +1,44 @@
+{
+  "name": "sars-cov-2-variant-browser",
+  "version": "1.0.0",
+  "scripts": {
+    "build": "next build && next export",
+    "dev": "next dev",
+    "lint": "eslint ./src ./server ./tools",
+    "start": "node server/server.js",
+    "update-data": "node tools/update-data.js",
+    "check-locations": "node tools/locations/check-locations.js"
+  },
+  "dependencies": {
+    "carbon-components": "~10.11.2",
+    "carbon-components-react": "~7.11.3",
+    "carbon-icons": "~7.0.7",
+    "compression": "^1.7.4",
+    "connect-history-api-fallback": "^1.6.0",
+    "cross-fetch": "^3.0.4",
+    "csv-parse": "^4.8.8",
+    "d3": "^5.15.1",
+    "dotenv": "^8.2.0",
+    "express": "^4.17.1",
+    "helmet": "^3.22.0",
+    "leaflet": "^1.6.0",
+    "moment": "^2.24.0",
+    "moment-timezone": "^0.5.28",
+    "next": "^9.4.1",
+    "react": "^16.13.1",
+    "react-dom": "^16.13.1",
+    "react-leaflet": "^2.6.3",
+    "react-leaflet-universal": "^2.2.1",
+    "swr": "^0.2.0",
+    "unfetch": "^4.1.0"
+  },
+  "devDependencies": {
+    "eslint": "^6.8.0",
+    "eslint-config-google": "^0.14.0",
+    "eslint-plugin-react": "^7.19.0"
+  },
+  "engines": {
+    "node": "12.13.0",
+    "npm": "6.12.0"
+  }
+}

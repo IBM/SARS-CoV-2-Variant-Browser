@@ -1,0 +1,18 @@
+.overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  z-index: 128;
+};
+
+.normalText {
+  color: inherit;
+}
+.highlightText {
+  color: #0f62fe;
+}
+.menuItem {
+  background: #f4f4f4;
+}

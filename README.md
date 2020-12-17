@@ -1,77 +1,96 @@
-<!-- This should be the location of the title of the repository, normally the short name -->
-# repo-template
+# SARS-CoV-2 Variant Browser
+The SARS-CoV-2 Variant Browser is a web based application to explore and visualize SARS-CoV-2 variants, apply spatial, temporal and molecular filters, and view data statistics in an easy-to-use graphical interface.
 
-<!-- Build Status, is a great thing to have at the top of your repository, it shows that you take your CI/CD as first class citizens -->
-<!-- [![Build Status](https://travis-ci.org/jjasghar/ibm-cloud-cli.svg?branch=master)](https://travis-ci.org/jjasghar/ibm-cloud-cli) -->
 
-<!-- Not always needed, but a scope helps the user understand in a short sentance like below, why this repo exists -->
-## Scope
+## Prerequiste
+- `Node.js` is required to prepare data and launch application server.
+- `Python3` is required to prepare data.
 
-The purpose of this project is to provide a template for new open source repositories.
 
-<!-- A more detailed Usage or detailed explaination of the repository here -->
-## Usage
+## Getting Started
+First, clone project, install dependencies and build application with the following commands:
 
-This repository contains some example best practices for open source repositories:
+```bash
+git clone https://github.com/IBM/SARS-CoV-2-Variant-Browser
+cd SARS-CoV-2-Variant-Browser
+npm install
+npm run build
+```
 
-* [LICENSE](LICENSE)
-* [README.md](README.md)
-* [CONTRIBUTING.md](CONTRIBUTING.md)
-* [MAINTAINERS.md](MAINTAINERS.md)
-<!-- A Changelog allows you to track major changes and things that happen, https://github.com/github-changelog-generator/github-changelog-generator can help automate the process -->
-* [CHANGELOG.md](CHANGELOG.md)
 
-> These are optional
+## Prepare Data
+Before exploring variant data with application, data preparation is necessary.
 
-<!-- The following are OPTIONAL, but strongly suggested to have in your repository. -->
-* [dco.yml](.github/dco.yml) - This enables DCO bot for you, please take a look https://github.com/probot/dco for more details.
-* [travis.yml](.travis.yml) - This is a example `.travis.yml`, please take a look https://docs.travis-ci.com/user/tutorial/ for more details.
+We introduce two properties `version` and `dataset` to manage data version and data set in folder and file names. Please follow the naming conventions to create foloder and files in each steps.
 
-These may be copied into a new or existing project to make it easier for developers not on a project team to collaborate.
+1. Obtain or create raw data
 
-<!-- A notes section is useful for anything that isn't covered in the Usage or Scope. Like what we have below. -->
-## Notes
+    You can obtain sample raw data files from [here](https://ibm.ent.box.com/s/7dhngud59qur8b8vkwznh7k7wyihidwe).
+    Put raw data files in the following structures:
+    ```
+    <data folder(default is ./data)>
+    |-- <version>
+        |-- <dataset>
+            |-- clade_<version>_<dataset>.tsv
+            |-- cluster_<version>_<dataset>.tsv
+            |-- samples_<version>_<dataset>.tsv
+            |-- variant_<version>_<dataset>.tsv
+        |-- locations_<version>.csv
+    ```
+1. Create stat data from raw data
 
-**NOTE: While this boilerplate project uses the Apache 2.0 license, when
-establishing a new repo using this template, please use the
-license that was approved for your project.**
+    Run the following command to generate stat files. Please note that the script requires numpy and pandas.
+    ```bash
+    python ./tools/StatViewTableProcess/Stat_View_Table_Process.py <version> <dataset>
+    ```
+    Stat data will be generated in the following structures:
+    ```
+    <data folder(default is ./data)>
+    |-- <version>
+        |-- Stat-<dataset>
+          |-- 00_basic_infomation_<version>_<dataset>.csv
+          |-- 00_gene_variant_<version>_<dataset>.csv
+          |-- ...
+          |-- 07_country_clade_week_<version>_<dataset>.csv
+    ```
 
-**NOTE: This repository has been configured with the [DCO bot](https://github.com/probot/dco).
-When you set up a new repository that uses the Apache license, you should
-use the DCO to manage contributions. The DCO bot will help enforce that.
-Please contact one of the IBM GH Org stewards.**
+1. Create JSON data files from raw and stat data:
 
-<!-- Questions can be useful but optional, this gives you a place to say, "This is how to contact this project maintainers or create PRs -->
-If you have any questions or issues you can create a new [issue here][issues].
+    Modify DATA_VERSION and DATA_SET environment variables in `.env` file to specify `version` and `dataset`,
+    and run the following command to generate JSON data.
+    ```bash
+    npm run update-data variant
+    ```
+    Or you can specify environment variables directly in the command line:
+    ```bash
+    DATA_VERSION=r42 DATA_SET=NCBI npm run update-data variant
+    ```
+    JSON data to be used in the application will be generated in `./data/json` folder.
 
-Pull requests are very welcome! Make sure your patches are well tested.
-Ideally create a topic branch for every separate change you make. For
-example:
+## Run Application
 
-1. Fork the repo
-2. Create your feature branch (`git checkout -b my-new-feature`)
-3. Commit your changes (`git commit -am 'Added some feature'`)
-4. Push to the branch (`git push origin my-new-feature`)
-5. Create new Pull Request
+Start server with the following command:
+
+```bash
+npm start
+```
+
+Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+
+Note that modify DEFAULT_DATA_SET environment variables in `.env` file to specify `dataset`.
+
+
+## Run Application in Development Mode
+
+You can run the development server if you need to modify code for your own enhancement:
+
+```bash
+npm run dev
+```
+
 
 ## License
 
-All source files must include a Copyright and License header. The SPDX license header is 
-preferred because it can be easily scanned.
+The SARS-CoV-2 Variant Browser is licensed under the Apache Software License, Version 2.
+The license's full text can be found in [LICENSE](LICENSE).
 
-If you would like to see the detailed LICENSE click [here](LICENSE).
-
-```text
-#
-# Copyright 2020- IBM Inc. All rights reserved
-# SPDX-License-Identifier: Apache2.0
-#
-```
-## Authors
-
-Optionally, you may include a list of authors, though this is redundant with the built-in
-GitHub list of contributors.
-
-- Author: New OpenSource IBMer <new-opensource-ibmer@ibm.com>
-
-[issues]: https://github.com/IBM/repo-template/issues/new

@@ -1,0 +1,19 @@
+.footer {
+  position: fixed;
+  left: 0;
+  bottom: 0;
+  width: 100vw;
+  height: 20px;
+  background: #161616;
+  font-size: 0.8rem;
+  text-align: center;
+  padding: 4px 0;
+  color: #c6c6c6;
+}
+.link {
+  color: #c6c6c6;
+  text-decoration: none;
+}
+.link:hover {
+  text-decoration: underline;
+}
