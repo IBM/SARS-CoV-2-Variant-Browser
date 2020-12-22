@@ -25,7 +25,7 @@ We introduce two properties `version` and `dataset` to manage data version and d
 
 1. Obtain or create raw data
 
-    You can obtain sample raw data files from [here](https://ibm.ent.box.com/s/7dhngud59qur8b8vkwznh7k7wyihidwe).
+    You can obtain sample raw data files from [here](https://ibm.box.com/s/gyhcjo5fsx386h2bi3sdg23wb1z3ca52).
     Put raw data files in the following structures:
     ```
     <data folder(default is ./data)>
